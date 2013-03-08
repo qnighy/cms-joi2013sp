@@ -125,6 +125,8 @@ def do_setup():
                   "cmsComputeComplexity=cmscontrib.ComputeComplexity:main",
                   "cmsYamlImporter=cmscontrib.YamlImporter:main",
                   "cmsYamlReimporter=cmscontrib.YamlReimporter:main",
+                  "cmsJoiImporter=cmscontrib.JoiImporter:main",
+                  "cmsJoiReimporter=cmscontrib.JoiReimporter:main",
                   "cmsSpoolExporter=cmscontrib.SpoolExporter:main",
                   "cmsContestExporter=cmscontrib.ContestExporter:main",
                   "cmsContestImporter=cmscontrib.ContestImporter:main",

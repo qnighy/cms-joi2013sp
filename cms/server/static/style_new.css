@@ -667,6 +667,10 @@ td.token_rules p:last-child {
     width: 100px;
 }
 
+#submission_detail table.testcase-list thead th:nth-child(5) {
+    width: 70px;
+}
+
 #submission_detail table.testcase-list tbody tr:not(.undefined) td:nth-child(1) {
     padding: 5px;
 }
