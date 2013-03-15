@@ -1818,7 +1818,6 @@ _cws_handlers = [
     (r"/documentation", DocumentationHandler),
     (r"/notifications", NotificationsHandler),
     (r"/question", QuestionHandler),
-    (r"/testing", UserTestInterfaceHandler),
     (r"/stl/(.*)", StaticFileGzHandler, {"path": config.stl_path}),
 ]
 
