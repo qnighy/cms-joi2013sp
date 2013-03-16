@@ -1814,7 +1814,6 @@ _cws_handlers = [
     (r"/tasks/(.*)/tests/([1-9][0-9]*)/details", UserTestDetailsHandler),
     (r"/tasks/(.*)/tests/([1-9][0-9]*)/(input|output)", UserTestIOHandler),
     (r"/tasks/(.*)/tests/([1-9][0-9]*)/files/(.*)", UserTestFileHandler),
-    (r"/communication", CommunicationHandler),
     (r"/documentation", DocumentationHandler),
     (r"/notifications", NotificationsHandler),
     (r"/question", QuestionHandler),
