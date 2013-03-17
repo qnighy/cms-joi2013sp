@@ -231,11 +231,7 @@ class ScoreTypeAlone(ScoreType):
 
         # We find the best amongst all tokened submissions...
         for submission_id in submission_ids:
-            if self.pool[submission_id]["tokened"]:
-                score = max(score, self.pool[submission_id]["score"])
-        # and the last one.
-        if submission_ids != []:
-            score = max(score, self.pool[submission_ids[-1]]["score"])
+            score = max(score, self.pool[submission_id]["score"])
 
         # Finally we update the score table.
         self.scores[username] = score
