@@ -1271,9 +1271,34 @@ class SubmissionDetailsHandler(BaseHandler):
         else:
             details = None
 
+        files = {}
+        for filename in submission.files:
+            real_filename = filename
+            if submission.language is not None:
+                repl_filename = re.sub("\.%l$", ".%s" % submission.language, filename)
+                if repl_filename not in submission.files:
+                    real_filename = repl_filename
+
+            digest = submission.files[filename].digest
+
+            try:
+                temp_filename = \
+                    self.application.service.file_cacher.get_file(
+                        digest, temp_path=True)
+            except Exception as error:
+                logger.error("Exception while retrieving file `%s'. %r" %
+                             (filename, error))
+                self.finish()
+                return
+
+            fd = open(temp_filename, "r")
+            files[real_filename] = fd.read()
+            fd.close()
+
         self.render("submission_details.html",
                     s=submission,
-                    details=details)
+                    details=details,
+                    files=files)
 
 
 class UserTestInterfaceHandler(BaseHandler):
