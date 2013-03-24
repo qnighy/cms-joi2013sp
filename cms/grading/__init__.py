@@ -608,7 +608,7 @@ def task_score(user, task):
             partial = True
 
         for submission in submissions:
-            if submission.token is not None:
+            if True:
                 if submission.scored():
                     max_tokened_score = max(max_tokened_score,
                                             submission.score)
